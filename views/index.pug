@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Game Store Inventory], a basic video game store inventory management website 
+
+  h2 Inventory management
+
+  p The system contains the following items:
+
+  ul
+    li #[strong #[a(href="/inventory/games") Games:]] !{game_count}
+    li #[strong #[a(href="/inventory/gameinstances") Game instances:]] !{gameinstance_count}
+    li #[strong #[a(href="/inventory/genres") Genres:]] !{genre_count}
+
+    

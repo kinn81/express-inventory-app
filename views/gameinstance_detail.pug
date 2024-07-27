@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+  h1 ID: #{game_instance._id}
+  p #[strong Title: ]
+    a(href=game_instance.game.url) #{game_instance.game.title}
+  p #[strong Condition: ] #{game_instance.condition}
+  p #[strong Price: ] #{game_instance.price}
+    
+  p
+    a(href=game_instance.url+'/delete') Delete Game Instance
+  p
+    a(href=game_instance.url+'/update') Update Game Instance
+  

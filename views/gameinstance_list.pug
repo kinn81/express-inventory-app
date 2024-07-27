@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  if gameinstance_list.length
+    ul
+      each val in gameinstance_list
+        li
+          a(href=val.url) #{val.game.title}
+          |  (#{val.condition}) #{val.game.price}
+  else
+    p There are no game copies in the system
+  
+

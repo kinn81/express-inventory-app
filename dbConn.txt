@@ -1,0 +1,1 @@
+mongodb+srv://myAtlasDBUser:wxd30293cblj@cluster0.5h4fiba.mongodb.net/inventory_app?retryWrites=true&w=majority

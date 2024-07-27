@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const Schema = mongoose.Schema;
 
 const GameSchema = new Schema({
@@ -7,13 +6,12 @@ const GameSchema = new Schema({
   description: { type: String, required: true },
   genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
   price: { type: Number, required: true },
-  numInStock: [{ type: Number, required: true }],
 });
 
-// Virtual for book's URL
-BookSchema.virtual("url").get(function () {
+// Virtual for game's URL
+GameSchema.virtual("url").get(function () {
   // We don't use an arrow function as we'll need the this object
-  return `/catalog/game/${this._id}`;
+  return `/inventory/game/${this._id}`;
 });
 
 // Export model

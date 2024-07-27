@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1 Title: #{game.title}
+
+  p #[strong Description:] #{game.description}
+  p #[strong Genre: ]
+    each val, index in game.genre
+      a(href=val.url) #{val.name}
+      if index < game.genre.length - 1
+        |,&nbsp;
+
+  div(style='margin-left:20px;margin-top:20px')
+    h2(style='font-size: 1.5rem;') Copies
+
+    each val in game_instances
+        hr
+        p #[strong #{game.title}]
+        p #{val.condition}
+        p #{val.price}
+        p #[strong Id: ]
+            a(href=val.url) #{val._id}
+    else
+      p There are no copies of this game available.
+      hr
+  p
+    a(href=game.url+'/delete') Delete Game
+  p
+    a(href=game.url+'/update') Update Game
+
